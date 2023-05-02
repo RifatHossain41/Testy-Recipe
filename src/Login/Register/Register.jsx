@@ -22,8 +22,14 @@ const Register = () => {
       setError ('Please add at least 6 characters in your password');
       return;
     }
-    else if(!/(?=.*[''])/.test(password, email)){
-      setError ('Please add your email and password')
+    
+    else if(!email.length){
+      setError ('email is empty')
+      return;
+    }
+    else if(!password){
+      setError ('password is empty')
+      return;
     }
 
     createUser(email, password)
@@ -66,6 +72,7 @@ const Register = () => {
             name="email"
             placeholder="Enter email"
             required
+            
           />
         </Form.Group>
 

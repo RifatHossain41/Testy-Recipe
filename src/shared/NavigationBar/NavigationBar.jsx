@@ -8,7 +8,7 @@ const NavigationBar = () => {
   const {user} = useContext(AuthContext)
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="white" variant="white">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
         
         <Navbar.Brand>Testy Recipes</Navbar.Brand>
