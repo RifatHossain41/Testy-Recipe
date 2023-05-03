@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import Chefs from '../Chefs/Chefs';
 
 const Home = () => {
   return (
@@ -47,6 +48,8 @@ const Home = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+
+    <Chefs></Chefs>
     </div>
   );
 };

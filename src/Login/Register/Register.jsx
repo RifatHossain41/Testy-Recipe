@@ -23,13 +23,8 @@ const Register = () => {
       return;
     }
     
-    else if(!email.length){
-      setError ('email is empty')
-      return;
-    }
-    else if(!password){
-      setError ('password is empty')
-      return;
+    else if (email || password === null){
+      return false;
     }
 
     createUser(email, password)

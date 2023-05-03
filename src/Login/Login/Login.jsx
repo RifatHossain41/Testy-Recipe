@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import { AuthContext } from '../../Provider/AuthProvider';
+import { getAuth, signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
+  const [user, setUser] = useState(null);
 
+  const auth = getAuth(app)
+
+ const { googleProvider } = useContext(AuthContext)
+
+  const handleGoggleSingIn = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setUser(loggedInUser);
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+  };
 
   return (
     <Container className="w-25 mx-auto">
@@ -27,6 +44,7 @@ const Login = () => {
         <Button variant="primary" type="submit">
           Login
         </Button>
+        
         <br />
         <Form.Text className="text-secondary">
          Don't Have An Account? <Link to="/register">Register</Link>
@@ -37,6 +55,14 @@ const Login = () => {
         <Form.Text className="text-danger">
 
         </Form.Text>
+        <br />
+        <Button onClick={handleGoggleSingIn} variant="secondary" type="submit">
+         Google Sign-in
+        </Button>
+        <br />
+        <Button variant="secondary" type="submit">
+         GitHub Sign-in
+        </Button>
       </Form>
     </Container>
   );

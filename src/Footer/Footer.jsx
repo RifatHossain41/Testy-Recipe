@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
           <div>
             <h2>CONNECT</h2>
-            <div className='mr-2'>
+            <div className='mb-2'>
             <FaFacebookSquare />
             <FaFirefox />
             <FaOpera />
