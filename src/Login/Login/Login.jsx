@@ -39,17 +39,6 @@ const Login = () => {
       })
   }
 
-  // const handleSingOut = () => {
-  //   signOut(auth)
-  //     .then((result) => {
-  //       console.log(result);
-  //       setUser(null);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -103,9 +92,6 @@ const Login = () => {
         </Form.Text>
         <br />
       
-        {/* <Button onClick={handleSingOut} variant="secondary" type="submit">
-        Sign Out
-       </Button>  */}
        <div>
          <Button onClick={handleGoggleSingIn} variant="secondary" type="submit">
          Google Sign-in

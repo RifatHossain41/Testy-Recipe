@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Chef from '../Chef/Chef';
 import { useLoaderData } from 'react-router-dom';
+import Banner from '../Banner/Banner';
 
 const Chefs = () => {
   const [chefs, setChefs] = useState([]);
@@ -21,7 +22,9 @@ const Chefs = () => {
       {
         chefs.map(chef => <Chef
          chef={chef}
-        ></Chef>)
+        ></Chef>
+        )
+        
       }
       </div>
   );
