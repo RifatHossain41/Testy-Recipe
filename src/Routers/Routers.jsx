@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: ":id",
         element: <Banner></Banner>,
-        loader: ({params}) => fetch(`http://localhost:4000/banner/${params._id}`)
+        loader: ({params}) => fetch(`https://the-food-recipe-server-rifathossain0423-gmailcom.vercel.app/banner/${params._id}`)
       }
     ]
   },

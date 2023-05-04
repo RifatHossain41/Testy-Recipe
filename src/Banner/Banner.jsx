@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 const Banner = () => {
   // const [informations, setInformations] = useState([]);
 
-  // fetch('http://localhost:4000/banner')
+  // fetch('https://the-food-recipe-server-rifathossain0423-gmailcom.vercel.app/banner')
   //   .then(res => res.json())
   //   .then(data => setInformations(data))
   //   .catch(error => console.error(error))
