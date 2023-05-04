@@ -14,37 +14,34 @@ const Banner = () => {
 
   const banner = useLoaderData();
   console.log(banner)
-  // const {_id, name, picture, years_of_experience, num_recipes, likes, description, ratings} = banner;
+  const {_id, name, picture, years_of_experience, num_recipes, likes, description, ratings} = banner;
   return (
     <div>
-      <h2>banner page</h2>
+      <h2>Banner Items</h2>
+      <div>
+        <div>
+            <img src={picture} alt="" />
+        </div>
+        <div>
+          <h2>{name}</h2>
+          <h5>{num_recipes} Recipes</h5>
+          <h5>{years_of_experience}</h5>
+          <p>{description}</p>
+          <div>
+          {/* <Rating 
+             placeholderRating={ratings}
+             readonly
+             emptySymbol={<FaStar></FaStar>}
+             placeholderSymbol={<FaStar className='text-warning'></FaStar>}
+             fullSymbol={<FaRegStar></FaRegStar>}
+          ></Rating> */}
+            <p>{ratings}</p>
+            <p>{likes}</p>
+          </div>
+          <Button>favorite</Button>
+        </div>
+      </div>
     </div>
-    // <div>
-    //   <h2>Banner Items</h2>
-    //   <div>
-    //     <div>
-    //         <img src={picture} alt="" />
-    //     </div>
-    //     <div>
-    //       <h2>{name}</h2>
-    //       <h5>{num_recipes} Recipes</h5>
-    //       <h5>{years_of_experience}</h5>
-    //       <p>{description}</p>
-    //       <div>
-    //       {/* <Rating 
-    //          placeholderRating={ratings}
-    //          readonly
-    //          emptySymbol={<FaStar></FaStar>}
-    //          placeholderSymbol={<FaStar className='text-warning'></FaStar>}
-    //          fullSymbol={<FaRegStar></FaRegStar>}
-    //       ></Rating> */}
-    //         <p>{ratings}</p>
-    //         <p>{likes}</p>
-    //       </div>
-    //       <Button>favorite</Button>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
