@@ -5,10 +5,11 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
   const [error, setError] = useState('')
+  const [user, setUser] = useState('')
+  const [email, setEmail] = useState('')
 
-  const {createUser} = useContext(AuthContext)
+  const { createUser } = useContext(AuthContext)
 
-  console.log(createUser)
 
   const handleRegister = event => {
     event.preventDefault()
@@ -16,23 +17,26 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    console.log( email, password);
+   
 
     if(password.length<6){
       setError ('Please add at least 6 characters in your password');
       return;
     }
     
-    else if (email || password === null){
-      return false;
-    }
+    // else if (email || password === null){
+    //   return false;
+    // }
 
-    createUser(email, password)
-    .then( result => {
+    createUser(name, email, password)
+    .then(result => {
       const loggedUser = result.user;
+      console.log(loggedUser)
+      
     })
-    .catch( error => {
-      console.error(error.message)
+    .catch(error => {
+      console.log(error.message)
     })
  }
 
@@ -40,32 +44,22 @@ const Register = () => {
     <Container className="w-25 mx-auto">
       <h2>Please Register</h2>
       <Form onSubmit={handleRegister}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="name"
-            placeholder="Enter name"
-            required
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Photo URL</Form.Label>
-          <Form.Control
-            type="text"
-            name="Photo"
-            placeholder="Photo URL"
-            required
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
             name="email"
             placeholder="Enter email"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicText">                                                                                                 
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            placeholder="Enter name"
             required
             
           />
@@ -80,6 +74,19 @@ const Register = () => {
             required
           />
         </Form.Group>
+
+        
+
+        <Form.Group className="mb-3" controlId="formBasicText">
+          <Form.Label>Photo URL</Form.Label>
+          <Form.Control
+            type="text"
+            name="Photo"
+            placeholder="Photo URL"
+            required
+          />
+        </Form.Group>
+
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" name="accept" label="Accept terms and condition" />
         </Form.Group>

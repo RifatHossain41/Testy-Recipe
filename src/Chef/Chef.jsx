@@ -7,7 +7,7 @@ const Chef = ({ chef }) => {
   const { name, picture, likes } = chef;
   return (
 
-    <div className="grid grid-cols-3">
+    <div className="col-lg-4">
       <div className=" ">
         <img src={picture} alt="" className="object-cover" />
         <h2>{name}</h2>
