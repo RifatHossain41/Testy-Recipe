@@ -19,6 +19,7 @@ const Chefs = () => {
   return (
       <div>
         <h3>Chefs Info</h3>
+      <div className='grid grid-cols-3 gap-3'>
       {
         chefs.map(chef => <Chef
          chef={chef}
@@ -26,6 +27,7 @@ const Chefs = () => {
         )
         
       }
+      </div>
       </div>
   );
 };
