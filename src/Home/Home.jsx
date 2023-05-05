@@ -4,7 +4,8 @@ import Chefs from '../Chefs/Chefs';
 
 const Home = () => {
   return (
-    <div className="mt-3 mb-3">
+   <div>
+     <div className="mt-3 mb-3">
        <Carousel>
       <Carousel.Item>
         <img
@@ -14,7 +15,7 @@ const Home = () => {
         />
         <Carousel.Caption>
           <h3>Bangladeshi Food</h3>
-          <p>angladesh is a country of great cuisine. Its food has been shaped by its diverse history and its particular geography. Bangladeshi cuisine is influenced by Mughlai cuisine and many Persian, Turkish, Arabic, and Indian dishes are popular here. So you can guess how many different tastes you will find on any menu.</p>
+          <p>Bangladesh is a country of great cuisine. Its food has been shaped by its diverse history and its particular geography. Bangladeshi cuisine is influenced by Mughlai cuisine and many Persian, Turkish, Arabic, and Indian dishes are popular here. So you can guess how many different tastes you will find on any menu.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -25,7 +26,7 @@ const Home = () => {
         />
 
         <Carousel.Caption>
-          <h3>Pakhistani Dishes</h3>
+          <h3>Pakistani Dishes</h3>
           <p>Pakistani food is rich, packed full of spice, generous with ghee, and unbelievably tasty.
 
             In this list of the 21 dishes to eat in Pakistan, I’m going to share with you the best dishes I tried during my trip to Pakistan.
@@ -48,9 +49,9 @@ const Home = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-
-    <Chefs></Chefs>
-    </div>
+  </div>
+ <Chefs></Chefs>
+</div>
   );
 };
 

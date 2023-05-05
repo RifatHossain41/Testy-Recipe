@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import Chef from '../Chef/Chef';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 
 const Chefs = () => {
   const [chefs, setChefs] = useState([]);
+   const { id } = useParams();
 
   useEffect(() => {
-    fetch('https://the-food-recipe-server-rifathossain0423-gmailcom.vercel.app/chefs')
+    fetch('http://localhost:4000/chefs/')
     .then(res => res.json())
     .then(data => setChefs(data))
     .catch(error => console.error(error))
   }, [])
 
-  // const chefInfo = useLoaderData()
-  // console.log(chefInfo);
 
   return (
       <div>
         <h3>Chefs Info</h3>
-      <div className='grid grid-cols-3 gap-3'>
+      <div className='lg:grid grid-cols-3 gap-3'>
       {
         chefs.map(chef => <Chef
+         key={chef.id}
          chef={chef}
         ></Chef>
         )
